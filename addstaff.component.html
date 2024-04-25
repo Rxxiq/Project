@@ -1,0 +1,50 @@
+<div id="outPopUp" class="">
+    <div class="">
+  
+        <!--to show error alert-->
+        <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>{{errormsg}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+  
+          <!--to show success alert-->
+          <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{successmsg}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <br><br>
+          <div align="center">
+            <img  src="/assets/userss.jpg" style="height: 100px;">
+      <br><br>
+        <form  [formGroup]="staffForm" >
+          <div  class="col-lg-4 mx-auto" >
+            <input type="text" class="form-control" formControlName="staffID" placeholder="Staff ID">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control" formControlName="staffName" placeholder="Staff Name">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control"  formControlName="staffEmail" placeholder="Staff Email">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control"  formControlName="staffPhone" placeholder="Staff Phone Number">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control"  formControlName="staffIntake" placeholder="Staff Intake">
+          </div>
+          <br>
+          <div align="center" class="col-lg-15 mt-2" *ngIf="!getparamid" (click)="staffSubmit()">
+      <button>Add Staff</button>
+          </div>
+  
+  
+  
+  
+        </form>
+  
+      </div>
+    </div>
