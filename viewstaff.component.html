@@ -1,0 +1,50 @@
+<div class="container">
+
+
+    <!--showmessage alert for delete-->
+    <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{successmsg}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <br><br>
+    <div align="center">
+      <img  src="/assets/userss.jpg" style="height: 100px;">
+  <br><br>
+    <table class="table">
+      <thead>
+        <tr>
+          <td align= "center" scope="col">No.</td>
+          <td align= "center" scope="col">Staff ID</td>
+          <td align= "center" scope="col">Staff Name</td>
+          <td align= "center" scope="col">Staff Email</td>
+          <td align= "center" scope="col">Staff Phone Number</td>
+          <td align= "center" scope="col">Staff Intake</td>
+  
+          <td scope="col"></td>
+          <td scope="col"></td>
+  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = 'let us of listData'>
+          <td align= "center"scope="row">{{us.id}}</td>
+          <td align= "center">{{us.staffID}}</td>
+          <td align= "center">{{us.staffName}}</td>
+          <td align= "center">{{us.staffEmail}}</td>
+          <td align= "center">{{us.staffPhone}}</td>
+          <td align= "center">{{us.staffIntake}}</td>
+  
+          <td></td>
+          <td>
+  
+            <button  (click)="deleteId(us.id)">REMOVE</button>
+            &nbsp;
+            <button [routerLink]="['/updatestaff', us.id]">EDIT🧑‍🎓</button>
+          </td>
+        </tr>
+  
+      </tbody>
+    </table>
+  
+  </div>
+  
